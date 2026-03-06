@@ -96,7 +96,7 @@ export default function ChatWidget() {
 
     return (
         <article
-            className="w-[416px] shadow-card rounded-lg bg-surface border border-border-warm overflow-hidden flex flex-col"
+            className="w-full max-w-(--width-chat-widget) shadow-card rounded-lg bg-surface border border-border-warm overflow-hidden flex flex-col"
             aria-label="Chat widget preview"
         >
             {/* Header */}

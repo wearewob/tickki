@@ -7,13 +7,8 @@ const HowItWorks: FC = () => {
         <section className="w-full bg-white py-[60px] md:py-[100px] px-6 lg:px-[194px] box-border font-figtree flex flex-col items-center gap-16 overflow-hidden">
             {/* Header Section */}
             <div className="flex flex-col items-center gap-4 z-[2]">
-                <Reveal>
-                    <div className="relative text-[14px] md:text-[16px] leading-[120%] uppercase font-inter text-[#475569] tracking-widest text-center">
-                        How It Works
-                    </div>
-                </Reveal>
                 <Reveal delay={200}>
-                    <h2 className="m-0 relative text-[36px] md:text-[48px] leading-[109%] font-normal text-center max-w-[800px] text-[#0f172a]">
+                    <h2 className="m-0 relative text-3xl md:text-4xl leading-tight font-heading text-text-heading text-center max-w-[800px]">
                         From setup to live support in minutes.
                     </h2>
                 </Reveal>
@@ -23,7 +18,7 @@ const HowItWorks: FC = () => {
             <div className="w-full max-w-[1280px] flex flex-col items-center gap-6">
 
                 {/* Hero Graphic Container */}
-                <div className="w-full h-[300px] md:h-[500px] relative rounded-[24px] overflow-hidden flex items-center justify-center bg-gray-50">
+                <div className="w-full h-[500px] md:h-[500px] relative rounded-[24px] overflow-hidden flex items-center justify-center bg-gray-50">
                     <Image
                         src="/how-img.png"
                         alt="How Tickki Works Graphic"
@@ -33,7 +28,7 @@ const HowItWorks: FC = () => {
                     />
 
                     {/* Central Icon */}
-                    <div className="relative z-[10] w-[60px] md:w-[80px] h-[60px] md:h-[80px] shadow-[0_12px_32px_rgba(0,0,0,0.12) flex items-center justify-center p-2">
+                    <div className="relative z-[10] w-[60px] md:w-[80px] h-[60px] md:h-[80px] shadow-[0_12px_32px_rgba(0,0,0,0.12)] flex items-center justify-center p-2">
                         <Image
                             src="/tickki-icon.svg"
                             alt="Tickki Feature"
@@ -43,8 +38,8 @@ const HowItWorks: FC = () => {
                         />
                     </div>
 
-                    {/* Left Float - Widget Visibility */}
-                    <div className="absolute left-[5%] xl:left-[10%] top-1/2 -translate-y-1/2 hidden md:flex flex-col bg-white rounded-[20px] shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-6 gap-4 w-[380px] z-[5]">
+                    {/* Left Float (desktop) / Top Float (mobile) - Widget Visibility */}
+                    <div className="absolute left-[5%] xl:left-[10%] top-[5%] md:top-1/2 md:-translate-y-1/2 flex flex-col bg-white rounded-[20px] shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-4 md:p-6 gap-3 md:gap-4 w-[85%] md:w-[380px] z-[5]">
                         <div className="flex flex-col gap-1">
                             <span className="text-[14px] font-semibold text-slate-900">Widget Visibility</span>
                             <span className="text-[12px] text-slate-500">Control whether the Tickki Website Widget renders on your site.</span>
@@ -60,8 +55,8 @@ const HowItWorks: FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Float - AI Training Confidence */}
-                    <div className="absolute right-[5%] xl:right-[10%] top-1/2 -translate-y-1/2 hidden md:flex flex-col bg-white rounded-[20px] shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-6 gap-4 w-[380px] z-[5]">
+                    {/* Right Float (desktop) / Bottom Float (mobile) - AI Training Confidence */}
+                    <div className="absolute right-[5%] xl:right-[10%] bottom-[5%] md:bottom-auto md:top-1/2 md:-translate-y-1/2 flex flex-col bg-white rounded-[20px] shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-4 md:p-6 gap-3 md:gap-4 w-[85%] md:w-[380px] z-[5]">
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center w-full">
                                 <span className="text-[14px] font-semibold text-slate-900">AI Training Confidence</span>
@@ -79,30 +74,30 @@ const HowItWorks: FC = () => {
                 <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-8 text-left">
                     {/* Col 1 */}
                     <Reveal delay={100}>
-                        <div className="flex flex-col gap-3">
-                            <h3 className="text-[18px] text-slate-900 font-figtree font-medium m-0">Train Tickki With Your Data</h3>
-                            <p className="text-[16px] text-slate-500 leading-snug m-0">Your data. Your rules. Tickki is simpply the enabler.</p>
+                        <div className="flex flex-col gap-1">
+                            <h3 className="text-[16px] text-slate-900 font-figtree m-0">Train With Your Data</h3>
+                            <p className="text-[16px] text-slate-500 m-0">Your data. Your rules. Tickki is simpply the enabler.</p>
                         </div>
                     </Reveal>
                     {/* Col 2 */}
                     <Reveal delay={200}>
-                        <div className="flex flex-col gap-3">
-                            <h3 className="text-[18px] text-slate-900 font-figtree font-medium m-0">Connect Your Channels</h3>
-                            <p className="text-[16px] text-slate-500 leading-snug m-0">Start instantly with our web widget, then plug in your WhatsApp channel.</p>
+                        <div className="flex flex-col gap-1">
+                            <h3 className="text-[16px] text-slate-900 font-figtree m-0">Connect Your Channels</h3>
+                            <p className="text-[16px] text-slate-500 m-0">Start instantly with our web widget, then plug in your WhatsApp channel.</p>
                         </div>
                     </Reveal>
                     {/* Col 3 */}
                     <Reveal delay={300}>
-                        <div className="flex flex-col gap-3">
-                            <h3 className="text-[18px] text-slate-900 font-figtree font-medium m-0">Centralize the Chaos</h3>
-                            <p className="text-[16px] text-slate-500 leading-snug m-0">Watch messages flow into one unified, real-time inbox—no constant page refreshing required.</p>
+                        <div className="flex flex-col gap-1">
+                            <h3 className="text-[16px] text-slate-900 font-figtree m-0">Centralize the Chaos</h3>
+                            <p className="text-[16px] text-slate-500 m-0">Watch messages flow into one unified, real-time inbox—no constant page refreshing required.</p>
                         </div>
                     </Reveal>
                     {/* Col 4 */}
                     <Reveal delay={400}>
-                        <div className="flex flex-col gap-3">
-                            <h3 className="text-[18px] text-slate-900 font-figtree font-medium m-0">Tickki Takes the Heavy Lifting</h3>
-                            <p className="text-[16px] text-slate-500 leading-snug m-0">Your human agents approve, edit, or take over with full customer context.</p>
+                        <div className="flex flex-col gap-1">
+                            <h3 className="text-[16px] text-slate-900 font-figtree m-0">Tickki & Human Loop</h3>
+                            <p className="text-[16px] text-slate-500 m-0">Your human agents approve, edit, or take over with full customer context</p>
                         </div>
                     </Reveal>
                 </div>

@@ -64,6 +64,15 @@
   --height-feature-card: 500px;
   --spacing-feature-text: 302px;
   --height-feature-illustration: 534px;
+
+  /* --- Feature3 Chat Preview --- */
+  --width-chat-preview: 365px;
+  --spacing-badge-offset: 16px;
+  --spacing-card-bottom: 60px;
+  --height-feature-preview: 480px;
+
+  /* --- Hero Chat Widget --- */
+  --width-chat-widget: 416px;
 }
 
 :root {
@@ -126,4 +135,17 @@ body {
 
 .delay-500 {
   animation-delay: 500ms;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utility: Hide scrollbar                                            */
+/* ------------------------------------------------------------------ */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

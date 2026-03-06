@@ -5,41 +5,35 @@ import { Reveal } from '@/components/shared';
 const Footer: FC = () => {
     return (
         <div
-            className="w-full relative [background:linear-gradient(180deg,_#fff,_#5e30eb)] flex flex-col items-center pt-[100px] pb-[40px] px-6 md:px-[326px] box-border text-center text-[12px] text-gray-200 font-figtree"
+            className="w-full relative [background:linear-gradient(180deg,_#fff,_#5e30eb)] flex flex-col items-center pt-[60px] md:pt-[100px] pb-[40px] px-6 lg:px-[194px] box-border text-center text-[12px] text-gray-200 font-figtree"
         >
             <div className="w-full max-w-[1536px] flex flex-col items-start shrink-0">
                 <div
-                    className="self-stretch rounded-[26px] overflow-hidden flex flex-col items-center pt-20 pb-0 px-0 relative isolate gap-10"
+                    className="self-stretch rounded-[26px] overflow-hidden flex flex-col items-center pt-16 md:pt-20 pb-0 px-0 relative isolate gap-8 md:gap-10"
                 >
                     <div
                         className="w-full h-full absolute top-0 right-0 bottom-0 left-0 rounded-[26px] overflow-hidden z-[0] shrink-0"
                     />
-                    <div className="flex flex-col items-center gap-3 z-[1] shrink-0">
+                    <div className="flex flex-col items-center gap-3 z-[1] shrink-0 px-4">
                         <div className="flex flex-col items-start">
                             <Reveal>
-                                <div className="rounded-full bg-white flex items-center py-0.5 px-6">
-                                    <div className="flex flex-col items-start">
-                                        <div className="self-stretch flex flex-col items-center">
-                                            <div className="relative tracking-[-0.12px] leading-4 text-brand-dark uppercase font-medium">
-                                                Get Started Now
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className="relative tracking-[-0.12px] leading-4 text-brand-dark uppercase font-medium text-[12px]">
+                                    Get Started Now
                                 </div>
                             </Reveal>
                         </div>
-                        <div className="flex flex-col items-center gap-5 text-[40px] font-radio-grotesk">
+                        <div className="flex flex-col items-center gap-5 text-[32px] md:text-[40px] font-radio-grotesk">
                             <div className="w-full max-w-[880px] flex flex-col items-center">
                                 <Reveal delay={200}>
                                     <div className="self-stretch flex flex-col items-center">
-                                        <h2 className="relative leading-10 m-0 text-brand-dark font-semibold">Ready to launch your AI support inbox?</h2>
+                                        <h2 className="relative text-3xl md:text-4xl leading-tight font-heading text-text-heading m-0 text-center">Ready to launch your AI support inbox?</h2>
                                     </div>
                                 </Reveal>
                             </div>
-                            <div className="w-full max-w-[560px] flex flex-col items-center text-[15px] font-figtree">
+                            <div className="w-full max-w-[560px] flex flex-col items-center text-[14px] md:text-[15px] font-figtree">
                                 <Reveal delay={400}>
                                     <div className="self-stretch flex flex-col items-center">
-                                        <div className="relative tracking-[-0.15px] leading-6 text-text-muted">
+                                        <div className="relative tracking-[-0.15px] leading-6 text-text-muted text-center">
                                             Start with web chat today, enable WhatsApp AI when ready.
                                         </div>
                                     </div>
@@ -64,10 +58,11 @@ const Footer: FC = () => {
                         </div>
                     </div>
                     <div
-                        className="w-full max-w-[880px] flex flex-col md:flex-row items-start pt-20 px-6 box-border gap-9 z-[2] shrink-0 text-left text-[7.71px] text-slate-500"
+                        className="w-full max-w-[880px] flex flex-col md:flex-row items-start pt-14 md:pt-20 px-2 md:px-6 box-border gap-8 md:gap-9 z-[2] shrink-0 text-left text-[7.71px] text-slate-500"
                     >
-                        <div className="w-full md:w-[304px] flex flex-col items-start gap-5">
-                            <div className="self-stretch flex flex-col items-start gap-4">
+                        {/* Logo + Description + Follow Button */}
+                        <div className="w-full md:w-[304px] flex flex-col items-start gap-4 md:gap-5">
+                            <div className="self-stretch flex flex-col items-start gap-3 md:gap-4">
                                 <div className="flex items-center">
                                     <Image
                                         className="h-[30px] w-auto relative object-contain"
@@ -81,8 +76,7 @@ const Footer: FC = () => {
                                 <div className="w-full flex md:w-[304px] flex-col items-start text-[13px] text-gray-200">
                                     <div className="self-stretch flex flex-col items-start">
                                         <div className="self-stretch relative tracking-[-0.13px] leading-[20px]">
-                                            With Pulsefy, experience a light, open-source <br />
-                                            analytics platform that honors privacy.
+                                            With Tickki, experience a light, open-source analytics platform that honors privacy.
                                         </div>
                                     </div>
                                 </div>
@@ -99,39 +93,39 @@ const Footer: FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex-1 flex flex-wrap md:flex-nowrap items-start text-[13px] text-gray-200 gap-8">
-                            <div className="flex-1 flex flex-col items-start gap-2 min-w-[140px]">
-                                <div className="w-[180px] flex flex-col items-start mb-2">
-                                    <div className="self-stretch flex flex-col items-start">
-                                        <div className="self-stretch relative tracking-[-0.13px] leading-[20px] font-semibold text-brand-dark">Features</div>
+
+                        {/* Link Columns */}
+                        <div className="flex-1 w-full flex flex-col gap-6 md:gap-8 text-[13px] text-gray-200">
+                            {/* Features + Company side by side */}
+                            <div className="w-full grid grid-cols-2 gap-6 md:flex md:gap-8">
+                                <div className="flex flex-col items-start gap-2 min-w-[120px]">
+                                    <div className="flex flex-col items-start mb-1 md:mb-2">
+                                        <div className="relative tracking-[-0.13px] leading-[20px] font-semibold text-brand-dark">Features</div>
+                                    </div>
+                                    <div className="flex flex-col items-start text-[14px] text-gray-200 gap-2.5 md:gap-3">
+                                        <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Integrations</a>
+                                        <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Simple metrics</a>
+                                        <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Privacy focused</a>
+                                        <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Open source</a>
                                     </div>
                                 </div>
-                                <div className="self-stretch flex flex-col items-start text-[14px] text-gray-200 gap-3">
-                                    <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Integrations</a>
-                                    <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Simple metrics</a>
-                                    <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Privacy focused</a>
-                                    <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Open source</a>
+                                <div className="flex flex-col items-start gap-2 min-w-[120px]">
+                                    <div className="flex flex-col items-start mb-1 md:mb-2">
+                                        <div className="relative tracking-[-0.13px] leading-[20px] font-semibold text-brand-dark">Company</div>
+                                    </div>
+                                    <div className="flex flex-col items-start text-[14px] text-gray-200 gap-2.5 md:gap-3">
+                                        <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">About</a>
+                                        <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Contact</a>
+                                        <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Privacy Policy</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="flex-1 flex flex-col items-start gap-2 min-w-[140px]">
-                                <div className="w-[180px] flex flex-col items-start mb-2">
-                                    <div className="self-stretch flex flex-col items-start">
-                                        <div className="self-stretch relative tracking-[-0.13px] leading-[20px] font-semibold text-brand-dark">Company</div>
-                                    </div>
+                            {/* Resources below */}
+                            <div className="flex flex-col items-start gap-2 min-w-[120px]">
+                                <div className="flex flex-col items-start mb-1 md:mb-2">
+                                    <div className="relative tracking-[-0.13px] leading-[20px] font-semibold text-brand-dark">Resources</div>
                                 </div>
-                                <div className="self-stretch flex flex-col items-start text-[14px] text-gray-200 gap-3">
-                                    <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">About</a>
-                                    <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Contact</a>
-                                    <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Privacy Policy</a>
-                                </div>
-                            </div>
-                            <div className="flex-1 flex flex-col items-start gap-2 min-w-[140px]">
-                                <div className="w-[180px] flex flex-col items-start mb-2">
-                                    <div className="self-stretch flex flex-col items-start">
-                                        <div className="self-stretch relative tracking-[-0.13px] leading-[20px] font-semibold text-brand-dark">Resources</div>
-                                    </div>
-                                </div>
-                                <div className="self-stretch flex flex-col items-start text-[14px] text-gray-200 gap-3">
+                                <div className="flex flex-col items-start text-[14px] text-gray-200 gap-2.5 md:gap-3">
                                     <a href="#" className="relative tracking-[-0.13px] leading-[20px] hover:text-brand-dark transition-colors">Blog</a>
                                 </div>
                             </div>

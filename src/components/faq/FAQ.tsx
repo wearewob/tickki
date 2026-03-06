@@ -10,9 +10,9 @@ const ChevronDownIcon = ({ className = "" }: { className?: string }) => (
     </svg>
 );
 
-const ArrowRightIcon = () => (
+const ArrowUpRightIcon = () => (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.33333 8H12.6667M12.6667 8L8 3.33333M12.6667 8L8 12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4.66667 11.3333L11.3333 4.66667M11.3333 4.66667H4.66667M11.3333 4.66667V11.3333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
@@ -57,34 +57,35 @@ const FAQ: FC = () => {
     };
 
     return (
-        <section className="w-full relative bg-surface-light overflow-hidden flex flex-col items-center py-[100px] px-6 lg:px-[194px] box-border text-left font-body">
-            <div className="w-full flex flex-col lg:flex-row items-start gap-12 lg:gap-16 max-w-[1280px]">
+        <section className="w-full relative bg-surface-light overflow-hidden flex flex-col items-center py-[60px] md:py-[100px] px-6 lg:px-[194px] box-border text-left font-body">
+            <div className="w-full flex flex-col lg:flex-row items-start gap-8 lg:gap-16 max-w-[1280px]">
 
                 {/* Left Column (Header & Actions) */}
-                <div className="flex-1 lg:max-w-[50%] flex flex-col items-start justify-between gap-10 lg:gap-5 self-stretch lg:h-[500px]">
-                    <div className="flex flex-col items-start gap-5 w-full">
+                <div className="flex-1 lg:max-w-[50%] flex flex-col items-start justify-between gap-6 lg:gap-5 lg:self-stretch lg:h-[500px]">
+                    <div className="flex flex-col items-start gap-4 w-full">
                         <Reveal>
                             <div className="relative leading-[109%] text-text-muted text-[16px]">FAQ</div>
                         </Reveal>
                         <Reveal delay={200}>
-                            <h2 className="w-full xl:max-w-[579px] m-0 text-[36px] md:text-[40px] leading-[109%] font-heading font-semibold text-brand-dark">
+                            <h2 className="w-full xl:max-w-[579px] m-0 text-3xl md:text-4xl leading-tight font-heading text-text-heading">
                                 All Your Questions Answered
                             </h2>
                         </Reveal>
 
                         <Reveal delay={400}>
-                            <button className="h-10 mt-2 rounded-xl bg-white flex items-center justify-center py-2 px-5 box-border border-gainsboro border hover:bg-surface-muted transition-colors cursor-pointer text-[14px] font-sans text-brand-dark">
+                            <button className="h-10 mt-1 rounded-xl bg-white flex items-center justify-center py-2 px-5 box-border border-gainsboro border hover:bg-surface-muted transition-colors cursor-pointer text-[14px] font-sans text-brand-dark">
                                 <div className="flex items-center gap-2">
                                     <span className="tracking-[-0.13px] leading-5 font-medium">Contact Support</span>
                                     <div className="text-text-muted flex items-center justify-center">
-                                        <ArrowRightIcon />
+                                        <ArrowUpRightIcon />
                                     </div>
                                 </div>
                             </button>
                         </Reveal>
                     </div>
 
-                    <Reveal delay={600}>
+                    {/* Ask AI - desktop only (positioned at bottom of left column) */}
+                    <Reveal delay={600} className="hidden lg:flex">
                         <div className="flex items-center gap-2.5 text-text-muted text-[16px] cursor-pointer hover:text-brand-dark transition-colors">
                             <span className="leading-[120%] font-medium">Ask AI about Tickki</span>
                             <div className="flex items-center justify-center text-brand-primary">
@@ -96,7 +97,7 @@ const FAQ: FC = () => {
 
                 {/* Right Column (Questions List) */}
                 <Reveal delay={200} className="flex-[1.5] w-full">
-                    <div className="w-full rounded-3xl bg-white flex flex-col items-start py-2 px-6 lg:px-8 text-[18px] lg:text-[20px]">
+                    <div className="w-full rounded-3xl bg-white flex flex-col items-start py-2 px-5 md:px-6 lg:px-8 text-[17px] md:text-[18px] lg:text-[20px]">
                         {FAQuestions.map((item, idx) => {
                             const isOpen = openIndex === idx;
                             return (
@@ -105,7 +106,7 @@ const FAQ: FC = () => {
                                     className="self-stretch border-b border-border-default last:border-0 flex flex-col items-start group cursor-pointer transition-colors my-1 bg-transparent"
                                     onClick={() => toggleAccordion(idx)}
                                 >
-                                    <div className="self-stretch flex items-center justify-between py-6 px-4 gap-5">
+                                    <div className="self-stretch flex items-center justify-between py-5 md:py-6 px-2 md:px-4 gap-4">
                                         <span className={`leading-[120%] font-medium transition-colors ${isOpen ? 'text-brand-primary' : 'text-brand-dark'}`}>{item.question}</span>
                                         <div className={`w-5 h-5 flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-primary' : 'text-text-muted group-hover:text-brand-dark'}`}>
                                             <ChevronDownIcon />
@@ -114,14 +115,14 @@ const FAQ: FC = () => {
 
                                     {/* Accordion Answer */}
                                     <div
-                                        className="px-4 overflow-hidden transition-all duration-300 ease-in-out"
+                                        className="px-2 md:px-4 overflow-hidden transition-all duration-300 ease-in-out"
                                         style={{
                                             maxHeight: isOpen ? '200px' : '0',
                                             opacity: isOpen ? 1 : 0,
                                             paddingBottom: isOpen ? '24px' : '0'
                                         }}
                                     >
-                                        <p className="m-0 text-[16px] text-[#475569] leading-[150%]">
+                                        <p className="m-0 text-[15px] md:text-[16px] text-[#475569] leading-[150%]">
                                             {item.answer}
                                         </p>
                                     </div>
@@ -131,6 +132,16 @@ const FAQ: FC = () => {
                     </div>
                 </Reveal>
             </div>
+
+            {/* Ask AI - mobile only (centered below accordion) */}
+            <Reveal delay={600} className="flex lg:hidden mt-8 justify-center w-full">
+                <div className="flex items-center gap-2.5 text-text-muted text-[16px] cursor-pointer hover:text-brand-dark transition-colors">
+                    <span className="leading-[120%] font-medium">Ask AI about Tickki</span>
+                    <div className="flex items-center justify-center text-brand-primary">
+                        <ArrowUpRightIcon />
+                    </div>
+                </div>
+            </Reveal>
         </section>
     );
 };

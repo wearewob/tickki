@@ -11,11 +11,11 @@ const NAV_LINKS = [
 export default function Navbar() {
     return (
         <nav
-            className="rounded-pill bg-surface flex items-center justify-between py-2 px-3 gap-14"
+            className="rounded-pill bg-surface flex items-center justify-between py-2 px-3 gap-4 md:gap-14"
             aria-label="Main navigation"
         >
             {/* Logo */}
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center shrink-0">
                 <Image
                     src="/tickki-logo.svg"
                     alt="Tickki — Inbox · Chat · Support"
@@ -25,7 +25,7 @@ export default function Navbar() {
                 />
             </Link>
 
-            {/* Nav Links */}
+            {/* Nav Links — hidden on mobile */}
             <ul className="hidden md:flex items-center gap-3 list-none m-0 p-0">
                 {NAV_LINKS.map(({ label, href }) => (
                     <li key={href}>
@@ -41,9 +41,10 @@ export default function Navbar() {
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-4">
+                {/* Get Started — hidden on mobile, visible md+ */}
                 <Link
                     href="#get-started"
-                    className="h-9 shadow-btn rounded-md bg-brand-primary text-surface text-sm font-medium tracking-tight leading-5 flex items-center justify-center px-4 hover:opacity-90 transition-opacity"
+                    className="hidden md:flex h-9 shadow-btn rounded-md bg-brand-primary text-surface text-sm font-medium tracking-tight leading-5 items-center justify-center px-4 hover:opacity-90 transition-opacity"
                 >
                     Get Started
                 </Link>
